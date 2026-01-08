@@ -1,4 +1,5 @@
 package Interfaces;
 
-public class IStudy {
+public interface IStudy {
+    void study();
 }

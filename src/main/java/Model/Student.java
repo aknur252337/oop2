@@ -1,52 +1,25 @@
-package oop;
+package Model;
 
-import oop.interfaces.IStudy;
+import Interfaces.IStudy;
 
-public final class Student extends Human implements IStudy {
+public class Student extends Human implements IStudy {
 
-    // 5) final field
-    private final String university;
-
+    private String major;
     private double gpa;
 
-    public Student(String name, int age, boolean isAlive,
-                   String university, double gpa) {
-        super(name, age, isAlive);
-        this.university = university;
+    public Student(String name, int age, String major, double gpa) {
+        super(name, age);
+        this.major = major;
         this.gpa = gpa;
     }
 
-    public String getUniversity() {
-        return university;
-    }
-
-    public double getGpa() {
-        return gpa;
-    }
-
-    public void setGpa(double gpa) {
-        this.gpa = gpa;
-    }
-
-    // implementation of interface methods
     @Override
     public void study() {
-        System.out.println(name + " is studying at " + university);
+        System.out.println(name + " is study in " + major);
     }
 
     @Override
-    public void takeExam() {
-        System.out.println(name + " is taking an exam");
-    }
-
-    // overridden abstract method
-    @Override
-    public String getRole() {
-        return "I am a student";
-    }
-
-    // 5) final method
-    public final void showStudentInfo() {
-        System.out.println("Student: " + name + ", GPA: " + gpa);
+    public void info() {
+        System.out.println("Student: " + name + ", Age: " + age + ", Specialization: " + major + ", GPA: " + gpa);
     }
 }

@@ -1,4 +1,5 @@
 package Interfaces;
 
-public class IWork {
+public interface IWork {
+    void work();
 }

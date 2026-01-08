@@ -1,45 +1,25 @@
-package oop;
+package Model;
 
-import oop.interfaces.IStudy;
-import oop.interfaces.IWork;
+import Interfaces.IWork;
 
-public class Employee extends Human implements IWork, IStudy {
+public class Employee extends Human implements IWork {
 
     private String position;
     private double salary;
 
-    public Employee(String name, int age, boolean isAlive,
-                    String position, double salary) {
-        super(name, age, isAlive);
+    public Employee(String name, int age, String position, double salary) {
+        super(name, age);
         this.position = position;
         this.salary = salary;
     }
 
-    // interface IWork
     @Override
     public void work() {
-        System.out.println(name + " is working as " + position);
+        System.out.println(name + " work in a position " + position);
     }
 
     @Override
-    public double calculateSalary() {
-        return salary;
-    }
-
-    // interface IStudy
-    @Override
-    public void study() {
-        System.out.println(name + " is studying while working");
-    }
-
-    @Override
-    public void takeExam() {
-        System.out.println(name + " passed a professional exam");
-    }
-
-    // abstract method implementation
-    @Override
-    public String getRole() {
-        return "I am an employee";
+    public void info() {
+        System.out.println("Employee: " + name + ", Age: " + age + ", Position: " + position + ", Salary: " + salary);
     }
 }
