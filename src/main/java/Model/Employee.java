@@ -6,7 +6,6 @@ public class Employee extends Human implements IWork {
 
     private String position;
     private double salary;
-
     public Employee(String name, int age, String position, double salary) {
         super(name, age);
         this.position = position;

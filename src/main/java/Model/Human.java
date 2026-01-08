@@ -10,7 +10,6 @@ public abstract class Human {
     }
 
     public abstract void info();
-
     public String getName() {
         return name;
     }
